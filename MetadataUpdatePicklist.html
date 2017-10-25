@@ -1,0 +1,20 @@
+<apex:page controller="UpdatePicklist">
+<apex:slds />
+<apex:pageMessages ></apex:pageMessages>
+    <apex:form >
+        <apex:pageBlock title="Add picklist values with field dependencies">
+            <br/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Update/Create Field Dependency" id="theButtonVersion" Action="{!updatePicklistField_Product_Line}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pagemessages />
+        <!-- If using .csv file then use below section to update the values otherwise use above section -->
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4"> 
+                  <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>
+                  <apex:commandButton value="Update/Create Field Dependency Using CSV" action="{!updatePicklistField_Product_Line}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>
